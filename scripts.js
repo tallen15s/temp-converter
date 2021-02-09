@@ -3,11 +3,16 @@
 //  1 "keyup events"
 // 2 use function, keyword so that you can use this
 // eslint-disable-next-line no-unused-expressions
-import converter from "./lib.js";
+import convert from "./lib.js";
 
-const oldTemp = document.querySelector("input");
+const inputs = document.querySelectorAll("input");
 
-oldTemp.addEventListener("keyup", (e) => {
-  const newTemp = converter(oldTemp.value, "toCelsius");
-  console.log(newTemp);
+inputs.forEach((input) => {
+  input.addEventListener("input", function handlekeyup() {
+    if (this.id === "DegF") {
+      inputs[0].value = convert(this.value, "toCelsius");
+    } else {
+      inputs[1].value = convert(this.value, "toFahrenheit");
+    }
+  });
 });

@@ -20,6 +20,9 @@ input {
 h1 {
   color: #70b2e5;
   font-family: sans-serif;
+  font-size: xx-large;
+  margin-right: 50rem;
+  text-align: center;
 }
 
 #convert {
